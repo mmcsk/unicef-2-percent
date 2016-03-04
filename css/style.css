@@ -1,0 +1,883 @@
+/*
+ * GLOBAL
+ */
+@font-face {
+	font-family: 'Gotham-XLight';
+	src: url('../fonts/Gotham-XLight_0.otf');
+}
+
+@font-face {
+	font-family: 'Gotham-Light';
+	src: url('../fonts/Gotham-Light_1.otf');
+}
+
+@font-face {
+	font-family: 'Gotham-Bold';
+	src: url('../fonts/Gotham-Bold.otf');
+}
+
+@font-face {
+	font-family: 'Gotham-Black';
+	src: url('../fonts/Gotham-Black_0.otf');
+}
+
+h2, h4 {
+	font-family: 'Gotham-Bold', 'Arial';
+}
+
+.clear {
+	display: table;
+	clear: both;
+}
+
+.no-padding {
+	padding: 0;
+}
+
+.padded-block {
+	padding: 3em;
+	flex: 1;
+}
+
+.bottom-offset {
+	margin-bottom: 2em;
+}
+
+.top-offset {
+	margin-top: 2em;
+}
+
+.panel-default {
+	border: none;
+	border-radius: 0;
+	margin: 0;
+	font-family: 'Gotham-Light', 'Arial';
+}
+
+.panel-default>.panel-heading+.panel-collapse>.panel-body {
+	border: none;
+}
+
+.panel-body {
+	padding: 0;
+}
+
+.panel-group .panel+.panel {
+	margin-top: 0;
+}
+
+.panel-group .panel,
+.panel-heading {
+	border-radius: 0;
+}
+
+.panel-heading {
+	transition: opacity 0.2s;
+}
+	.panel-heading:hover {
+		opacity: 0.9;
+	}
+
+.panel-title__icon-wrapper {
+	display: inline-block;
+	width: 4em;
+	height: 4em;
+	margin-right: 1em;
+	padding: 1em;
+	border-radius: 2em;
+	background: rgba(255, 255, 255, .1);
+	vertical-align: middle;
+	line-height: 2em;
+	transition: transform 0.2s;
+}
+
+.panel-title__icon {
+	width: 100%;
+}
+
+.panel-title__text {
+	margin-left: 0em;
+	display: inline-block;
+	max-width: 70%;
+	vertical-align: middle;
+	font-size: 1.2em;
+	font-weight: bold;
+}
+
+
+.panel-default > .panel-heading--zero {
+	min-height: 24em;
+	color: #fff;
+	background-color: #09f;
+}
+
+	.panel-heading--zero h2 {
+		margin-top: 1.5em;
+		color: #fff;
+		font-size: 3em;
+	}
+
+.panel-heading--first {
+	background-color: #0099ff;
+	background: -webkit-linear-gradient(#0091f7, #0099ff);
+}
+.panel-heading--second {
+	background-color: #0091f7;
+	background: -webkit-linear-gradient(#0088ee, #0091f7);
+}
+.panel-heading--third {
+	background-color: #0088ee;
+	background: -webkit-linear-gradient(#0080e6, #0088ee);
+}
+
+.panel-heading--fourth {
+	background-color: #0080e6;
+	background: -webkit-linear-gradient(#0077dd, #0080e6);
+}
+
+.panel-heading--fifth {
+	background-color: #0077dd;
+	background: -webkit-linear-gradient(#006fd5, #0077dd);
+}
+
+.panel-heading--sixth {
+	background-color: #006fd5;
+	background: -webkit-linear-gradient(#0066cc, #006fd5);
+}
+
+.panel-title {
+	display: block;
+	margin: 0;
+	transition: all 0.2s;
+}
+
+a.panel-title {
+	color: #fff;
+}
+
+.panel-title:hover,
+.panel-title:active,
+.panel-title:focus {
+	text-decoration: none;
+}
+
+.panel-title:hover .panel-title__icon-wrapper,
+.section-3__icon-wrapper:hover
+ {
+	-webkit-animation: shake 0.5s;
+	-moz-animation: shake 0.5s;
+	-ms-animation: shake 0.5s;
+	animation: shake 0.5s;
+}
+
+/*
+ * ANIMATIONS
+ */
+@-webkit-keyframes shake {
+	0% {-webkit-transform: rotate(0);}
+	20% {-webkit-transform: rotate(6deg);}
+	40% {-webkit-transform: rotate(-6deg);}
+	60% {-webkit-transform: rotate(6deg);}
+	80% {-webkit-transform: rotate(-6deg);}
+	100% {-webkit-transform: rotate(0);}
+}
+
+@-moz-keyframes shake {
+	0% {-moz-transform: rotate(0);}
+	20% {-moz-transform: rotate(6deg);}
+	40% {-moz-transform: rotate(-6deg);}
+	60% {-moz-transform: rotate(6deg);}
+	80% {-moz-transform: rotate(-6deg);}
+	100% {-moz-transform: rotate(0);}
+}
+
+@-ms-keyframes shake {
+	0% {-ms-transform: rotate(0);}
+	20% {-ms-transform: rotate(6deg);}
+	40% {-ms-transform: rotate(-6deg);}
+	60% {-ms-transform: rotate(6deg);}
+	80% {-ms-transform: rotate(-6deg);}
+	100% {-ms-transform: rotate(0);}
+}
+
+@keyframes shake {
+	0% {transform: rotate(0);}
+	20% {transform: rotate(6deg);}
+	40% {transform: rotate(-6deg);}
+	60% {transform: rotate(6deg);}
+	80% {transform: rotate(-6deg);}
+	100% {transform: rotate(0);}
+}
+
+/*
+ * IMAGE LABELS
+ */
+.image-label-left {
+	position: absolute;
+	top: 2em;
+	left: 0;
+	max-width: 17em;
+	padding: 10px;
+	padding-bottom: 0;
+	font-size: 0.8em;
+	color: #eee;
+	background: #333;
+}
+
+.image-label-right {
+	position: absolute;
+	bottom: 2em;
+	padding: 15px;
+	right: 0;
+	max-height: 15em;
+	color: #eee;
+	background: rgba(0, 0, 0, 0.8);
+	font-family: 'Gotham-XLight', 'Arial';
+}
+
+/*
+ * COLORS
+ */
+.grey {
+	color: #eee;
+	max-height: 100em;
+}
+
+.grey--1 {
+	background: #666;
+}
+
+.grey--2 {
+	background: #4d4d4d;
+}
+
+.grey--3 {
+	background: #333;
+}
+
+.big-blue {
+	font-family: 'Gotham-Black';
+	font-size: 2em;
+	color: #09f;
+}
+
+.big-blue--super {
+	font-size: 4em;
+}
+
+/*
+ *  SLIDE 0
+ */
+
+.top-block-content {
+	position: absolute;
+	top: 0;
+	bottom: 0;
+	left: 0;
+	right: 0;
+}
+
+.main-image,
+.section__image {
+	position: relative;
+	top: 0;
+	height: 24em;
+	left: 0;
+	right: 0;
+	background: url('../images/0-newborn-baby.jpg');
+	background-size: 100%;
+	background-position: 50% 50%;
+	transition: all 0.6s;
+}
+
+.section__image:hover {
+	background-size: 110%;
+	box-shadow: inset 0 0 2em #111;
+}
+
+.main-image {
+	background-size: cover;
+}
+
+.main-image:hover {
+	background-size: cover;
+}
+
+.logo {
+	position: absolute;
+	top: 1.6em;
+	right: 0;
+	padding: 1em;
+	background: #fff;
+}
+
+.higher {
+	text-align: center;
+	font-size: 1.8em;
+}
+
+.donate-button {
+	display: inline-block;
+	margin-top: 4em;
+	padding: 0.5em 1em;
+	color: #eee;
+	font-family: 'Gotham-Bold';
+	font-size: 2em;
+	background: #e11;
+	border: 0.2em solid #a33;
+	border-top-color: #f77;
+	border-left-color: #f77;
+	transition: all 0.2s;
+}
+	.donate-button:hover,
+	.donate-button:focus {
+		box-shadow: 0 0 0.5em #a33;
+		color: #fff;
+		/*background: #f33;*/
+		text-decoration: none;
+	}
+
+	.donate-button:active {
+		border-color: #a33;
+		border-bottom-color: #f77;
+		border-right-color: #f77;
+	}
+
+.section-0__id-info {
+	font-family: 'Gotham-Bold';
+	color: #09f;
+}
+
+.section-0__data-list dt {
+	float: left;
+	clear: left;
+	min-width: 15em;
+	margin-right: 1em;
+	font-weight: normal;
+	text-align: right;
+}
+
+.section-0__data-list dd {
+	font-family: 'Gotham-Black';
+	font-weight: bold;
+	margin-left: 16em;
+}
+
+.section-0__icon {
+	width: 5em;
+	transition: all 0.2s;
+}
+
+.section-0__icon-label {
+	margin: 1em 0 2em;
+}
+
+.section-0__guide {
+	margin-bottom: 2em;
+}
+
+.miniheader {
+	margin-bottom: 1em;
+	padding: 0.5em;
+	font-family: 'Gotham-Bold';
+	font-size: 1.5em;
+	color: #fff;
+	background: #09f;
+}
+
+.file-example:hover .section-0__icon {
+	transform: scale(1.2);
+}
+
+/*
+ *  SLIDE 1
+ */
+.section-1__reasons {
+	display: -webkit-flex;
+	display: -ms-flexbox;
+	display: flex;
+	overflow: hidden;
+	align-items: stretch;
+}
+
+.info-block {
+	padding: 3em 5em;
+	background: #eee;
+}
+
+.section-1__reasons-logo {
+	transition: all 0.2s;
+}
+
+.section-1__reasons-logo:hover {
+	transform: scale(1.1);
+}
+
+/*
+ *  SLIDE 2
+ */
+.section-2__icon {
+	width: 5em;
+}
+
+.section-2__label {
+	margin-top: 2em;
+}
+
+.section-2__reasons {
+	display: -webkit-flex;
+	display: -ms-flexbox;
+	display: flex;
+	overflow: hidden;
+	align-items: stretch;
+}
+
+/*
+ *  SLIDE 3
+ */
+.section-3__image {
+	background-image: url('../images/3-happy-father.jpg');
+	overflow: hidden;
+}
+
+.section-3__icon-wrapper {
+	display: inline-block;
+	width: 8em;
+	height: 8em;
+	padding: 2em 0;
+	border-radius: 4em;
+	text-align: center;
+	background: #09f;
+}
+
+.section-3__icon {
+	width: 100%;
+	height: 100%;
+}
+
+.section-3__icon--smaller {
+	width: 70%;
+	height: 70%;
+}
+
+.section-3__icon-label {
+	color: #fff;
+	margin: 0;
+	font-size: 0.7em;
+}
+.section-3__icon + .section-3__icon-label {
+	margin-top: 5px;
+}
+
+.section-3__label {
+	font-family: 'Gotham-Light';
+}
+
+.section-3__number {
+	margin-top: 1em;
+	font-size: 1.2em;
+}
+
+.bolder {
+	font-family: 'Gotham-Bold';
+	font-size: 1.3em;
+	color: #333;
+}
+
+/*
+ *  SLIDE 4
+ */
+.section-4__image {
+	min-height: 26em;
+	background-image: url('../images/4-kindergarden.jpg');
+}
+
+.section-4__text {
+	font-family: 'Gotham-Light';
+}
+
+/*
+ *  SLIDE 5
+ */
+
+.section-5__image--left {
+	background-image: url('../images/5-1-hygienic-package.jpg');
+}
+
+.section-5__image--right {
+	background-image: url('../images/5-2-crying-baby.jpg');
+}
+
+.section-5__image {
+	background-size: 150%;
+}
+
+.section-5__image:hover {
+	background-size: 160%;
+}
+
+.section-5__image-label {
+	position: relative;
+	padding: 1em;
+}
+
+.section-5__image-label--left:after,
+.section-5__image-label--right:before {
+	display: block;
+	content: "";
+	top: 50%;
+	right: 0;
+	position: absolute;
+	border: 0.75em solid transparent;
+	border-top-width: 1.5em;
+	border-bottom-width: 1.5em;
+	border-right-color: #fff;
+	transform: translateY(-50%);
+}
+
+.section-5__image-label--right:before {
+	left: 0;
+	right: auto;
+	border-left-color: #fff;
+	border-right-color: transparent;
+}
+
+.section-5__what-we-can-do {
+	margin-top: 8em;
+}
+
+.image-label__text,
+.image-label__price {
+	float: left;
+	width: 50%;
+}
+
+.image-label__price {
+	text-align: center;
+	font-size: 4em;
+}
+
+.image-label__num {
+	font-family: 'Gotham-Black';
+	margin-right: 0.2em;
+}
+
+/*
+ *  SLIDE 6 
+ */
+
+.section-6__image--1 {
+	background-image: url('../images/6-1-child-in-hospital.jpg');
+}
+
+.section-6__image--2 {
+	background-image: url('../images/6-2-child-in-refugee-camp.jpg');
+	background-position: 0 -15em;
+}
+
+.section-6__image--3 {
+	background-image: url('../images/6-3-child-on-bomb.jpg');
+	background-position: top;
+}
+
+/*
+ * FOOTER
+ */
+.kamila {
+	/*width: 100%;*/
+	min-height: 14em;
+	background-image: url('../images/kamila-magalova.jpg');
+	background-repeat: no-repeat;
+	background-size: contain;
+}
+
+.signature {
+	width: 15em;
+	vertical-align: top;
+}
+
+@media screen and (max-width: 480px) {
+	.kamila {
+		width: 100%;
+	}
+}
+
+@media screen and (max-width: 640px) {
+	.main-image {background-image: url('../images/320/0-newborn-baby.jpg');}
+	.section-3__image {background-image: url('../images/320/3-happy-father.jpg'); z-index: 1;}
+	.section-4__image {background-image: url('../images/320/4-kindergarden.jpg'); min-height: 13em;}
+	.section-5__image--left {background-image: url('../images/320/5-1-hygienic-package.jpg');}
+	.section-5__image--right {background-image: url('../images/320/5-2-crying-baby.jpg');}
+	.section-6__image--1 {background-image: url('../images/320/6-1-child-in-hospital.jpg');}
+	.section-6__image--2 {background-image: url('../images/320/6-2-child-in-refugee-camp.jpg');}
+	.section-6__image--3 {background-image: url('../images/320/6-3-child-on-bomb.jpg');}
+	.kamila {background-image: url('../images/320/kamila-magalova.jpg');}
+
+	.info-block {
+		padding: 3em;
+	}
+
+	.section-0__data-list dt {
+		display: block;
+		float: none;
+		text-align: left;
+	}
+
+	.section-0__data-list dd {
+		margin: 0 0 1em 0;
+	}
+
+	.file-example:nth-child(2n) {
+    	clear: left;
+	}
+
+	.section-1__reasons,
+	.section-2__reasons {
+		display: block;
+	}
+
+	.section-1__reasons-text,
+	.section-1__reasons-logo {
+		width: 100%;
+	}
+
+	.section-1__reasons-logo {
+		padding: 0 0 2em;
+	}
+
+	.reasons-logo__image {
+		max-width: 10em;
+	}
+
+	.section-5__image-block {
+		float: none;
+	}
+	.section-5__what-we-can-do {
+		margin-top: 2em;
+	}
+
+	.section-6__wrapper {
+		display: flex;
+		height: 100vh;
+		flex-flow: column;
+	}
+
+
+
+	.section-6__image--2 {
+		order: 2;
+		background-position: 0 -4.5em;
+	}
+	.section-6__image-text {
+		order: 1;
+	}
+
+	.top-block-content {
+		position: relative;
+	}
+
+	.top-block-content .image-label-left {
+		display: none;
+	}
+
+	.top-block-content .image-label-right {
+		position: relative;
+		width: 100%;
+		left: 0;
+		bottom: 0;
+	}
+
+	.top-block-content .logo {
+		top: -50vh;
+	}
+
+	.panel-heading--zero h2 {
+		font-size: 2em;
+		text-align: center;
+	}
+
+	.donate-button {
+		margin-top: 2em;
+		font-size: 1.5em;
+	}
+
+	.section__image {
+		height: 12em;
+	}
+
+	.section-6__image,
+	.section-6__image:hover {
+		height: 24em;
+		background-size: cover;
+	}
+
+	.section-3__label {
+		font-size: 0.9em;
+	}
+
+	.main-image {
+		height: 60vh;
+	}
+
+	.image-label-right--in-section {
+		display: none;
+	}
+
+	.image-label-left--in-section {
+		top: -100%;
+		right: 0;
+		max-width: 100%;
+		height: inherit;
+		font-size: 1em;
+		text-align: center;
+		padding: 2em;
+		background-color: rgba(0, 0, 0, 0.8);
+		transition: all 0.5s 0.2s;
+	}
+
+	.section-3__image:hover .image-label-left--in-section {
+		top: 0;
+	}
+
+	.section-3__image:after {
+		position: absolute;
+		content: "+";
+		display: block;
+		top: 50%;
+		left: 50%;
+		width: 2em;
+		height: 2em;
+		margin: -1em 0 0 -1em;
+		padding-top: 0.2em;
+		color: #fff;
+		background: rgba(255, 255, 255, 0.4);
+		text-align: center;
+		vertical-align: middle;
+		border-radius: 1em;
+		transition: all 0.7s 0.2s;
+	}
+
+	.section-3__image:hover:after {
+		opacity: 0.1;
+		transition: all 0.2s;
+	}
+
+	.section-5__image-label--left:after,
+	.section-5__image-label--right:before {
+		display: none;
+	}
+
+	.section-5__image--left {
+		background-position: -2em -4em;
+	}
+	.section-5__image--right {
+		background-position: -5em -3.5em;
+	}
+
+	.signature-name,
+	.signature {
+		float: right;
+	}
+}
+
+@media screen and (min-width: 768px) and (max-width: 959px) and (orientation: portrait) {
+	.donate-button {
+		margin-top: 6em;
+		font-size: 1.5em;
+	}
+}
+
+@media screen and (max-width: 960px) {
+	.main-image {background-image: url('../images/480/0-newborn-baby.jpg');}
+	.section-3__image {background-image: url('../images/480/3-happy-father.jpg');}
+	.section-4__image {background-image: url('../images/480/4-kindergarden.jpg');}
+	.section-5__image--left {background-image: url('../images/480/5-1-hygienic-package.jpg');}
+	.section-5__image--right {background-image: url('../images/480/5-2-crying-baby.jpg');}
+	.section-6__image--1 {background-image: url('../images/480/6-1-child-in-hospital.jpg');}
+	.section-6__image--2 {background-image: url('../images/480/6-2-child-in-refugee-camp.jpg');}
+	.section-6__image--3 {background-image: url('../images/480/6-3-child-on-bomb.jpg');}
+	.kamila {background-image: url('../images/480/kamila-magalova.jpg');}
+
+	.section-3__icon-wrapper {
+		display: inline-block;
+		width: 8em;
+		height: 8em;
+		padding: 2em 0;
+		border-radius: 4em;
+		text-align: center;
+		background: #09f;
+	}
+}
+
+@media screen and (max-width: 1200px) {
+	.main-image {background-image: url('../images/640/0-newborn-baby.jpg');}
+	.section-3__image {background-image: url('../images/640/3-happy-father.jpg');}
+	.section-4__image {background-image: url('../images/640/4-kindergarden.jpg');}
+	.section-5__image--left {background-image: url('../images/640/5-1-hygienic-package.jpg');}
+	.section-5__image--right {background-image: url('../images/640/5-2-crying-baby.jpg');}
+	.section-6__image--1 {background-image: url('../images/640/6-1-child-in-hospital.jpg');}
+	.section-6__image--2 {background-image: url('../images/640/6-2-child-in-refugee-camp.jpg');}
+	.section-6__image--3 {background-image: url('../images/640/6-3-child-on-bomb.jpg');}
+	.kamila {background-image: url('../images/640/kamila-magalova.jpg');}
+
+	.section-3__icon-wrapper {
+		display: inline-block;
+		width: 6em;
+		height: 6em;
+		padding: 1.5em 0;
+		border-radius: 3em;
+		text-align: center;
+		background: #09f;
+	}
+	.section-3__icon--smaller ~ .section-3__icon-label {
+		font-size: 0.5em;
+	}
+}
+
+@media screen and (min-width: 1601px) {
+	.section-3__icon-wrapper {
+		display: inline-block;
+		width: 10em;
+		height: 10em;
+		padding: 3em 0;
+		border-radius: 5em;
+		text-align: center;
+		background: #09f;
+	}
+}
+
+@media screen and (max-width: 1920px) {
+	.main-image {background-image: url('../images/800/0-newborn-baby.jpg');}
+	.section-3__image {background-image: url('../images/800/3-happy-father.jpg');}
+	.section-4__image {background-image: url('../images/800/4-kindergarden.jpg');}
+	.section-5__image--left {background-image: url('../images/800/5-1-hygienic-package.jpg');}
+	.section-5__image--right {background-image: url('../images/800/5-2-crying-baby.jpg');}
+	.section-6__image--1 {background-image: url('../images/800/6-1-child-in-hospital.jpg');}
+	.section-6__image--2 {background-image: url('../images/800/6-2-child-in-refugee-camp.jpg');}
+	.section-6__image--3 {background-image: url('../images/800/6-3-child-on-bomb.jpg');}
+	.kamila {background-image: url('../images/800/kamila-magalova.jpg');}
+}
+
+@media screen and (max-width: 3840px) {
+	.main-image {background-image: url('../images/1200/0-newborn-baby.jpg');}
+	.section-3__image {background-image: url('../images/1200/3-happy-father.jpg');}
+	.section-4__image {background-image: url('../images/1200/4-kindergarden.jpg');}
+	.section-5__image--left {background-image: url('../images/1200/5-1-hygienic-package.jpg');}
+	.section-5__image--right {background-image: url('../images/1200/5-2-crying-baby.jpg');}
+	.section-6__image--1 {background-image: url('../images/1200/6-1-child-in-hospital.jpg');}
+	.section-6__image--2 {background-image: url('../images/1200/6-2-child-in-refugee-camp.jpg');}
+	.section-6__image--3 {background-image: url('../images/1200/6-3-child-on-bomb.jpg');}
+	.kamila {background-image: url('../images/1200/kamila-magalova.jpg');}
+}
+
+@media screen and (min-width: 3841px) {
+	.main-image {background-image: url('../images/1920/0-newborn-baby.jpg');}
+	.section-3__image {background-image: url('../images/1920/3-happy-father.jpg');}
+	.section-4__image {background-image: url('../images/1920/4-kindergarden.jpg');}
+	.section-5__image--left {background-image: url('../images/1920/5-1-hygienic-package.jpg');}
+	.section-5__image--right {background-image: url('../images/1920/5-2-crying-baby.jpg');}
+	.section-6__image--1 {background-image: url('../images/1920/6-1-child-in-hospital.jpg');}
+	.section-6__image--2 {background-image: url('../images/1920/6-2-child-in-refugee-camp.jpg');}
+	.section-6__image--3 {background-image: url('../images/1920/6-3-child-on-bomb.jpg');}
+	.kamila {background-image: url('../images/1920/kamila-magalova.jpg');}
+}
